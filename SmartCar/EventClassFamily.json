@@ -1,0 +1,139 @@
+[
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "InfoRequestEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "InfoObject",
+    "type": "record",
+    "classType": "object",
+    "fields": [
+      {
+        "name": "Speed",
+        "type": "int"
+      },
+      {
+        "name": "Driving",
+        "type": "boolean"
+      },
+      {
+        "name": "Color1",
+        "type": "string"	  
+      },
+      {
+        "name": "Color2",
+        "type": "string"	  
+      },	  
+      {
+        "name": "Distance",
+        "type": "double"
+      },
+      {
+        "name": "Touched",
+        "type": "boolean"
+      },
+	  {
+		"name": "Battery",
+		"type": "int"
+	  }
+    ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "InfoResponseEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "InfoObject",
+        "type": "smart_things.car.schema.InfoObject"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "StartedDrivingEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "StoppedDrivingEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "StartedParkingEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "DodgeEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "StartDrivingEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "StopDrivingEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "ParkingPossibleEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "SetSpeedEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "Speed",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "AvoidedDeathEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "ToogleStandbyEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.car.schema",
+    "name": "LostWayEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  }
+]

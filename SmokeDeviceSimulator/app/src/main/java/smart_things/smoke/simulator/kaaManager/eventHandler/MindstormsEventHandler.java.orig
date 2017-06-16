@@ -1,0 +1,145 @@
+package smart_things.smoke.simulator.kaaManager.eventHandler;
+
+import android.util.Log;
+
+import org.kaaproject.kaa.client.KaaClient;
+import org.kaaproject.kaa.client.event.EventFamilyFactory;
+import org.kaaproject.kaa.client.event.FindEventListenersCallback;
+
+import smart_things.smoke.schema.backToNormalEvent;
+import smart_things.smoke.schema.InfoRequestEvent;
+import smart_things.smoke.schema.InfoResponseEvent;
+import smart_things.smoke.schema.smokeDetectionEvent;
+import smart_things.smoke.schema.SmokeDetectorEventFamily;
+
+
+//import org.kaaproject.kaa.schema.mindstorms2.Dodging;
+//import org.kaaproject.kaa.schema.mindstorms2.MindstormsEventFamily2;
+//import org.kaaproject.kaa.schema.mindstorms2.StartDriving;
+//import org.kaaproject.kaa.schema.mindstorms2.StartedDriving;
+//import org.kaaproject.kaa.schema.mindstorms2.StartedParking;
+//import org.kaaproject.kaa.schema.mindstorms2.StoppedDriving;
+
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Created by Lukas on 29.12.16.
+ */
+<<<<<<< HEAD
+public class SmokeDetectorEventHandler {
+=======
+public class MindstormsEventHandler {
+    /*
+>>>>>>> origin/dev
+
+    private KaaClient kaaClient;
+    private SmokeDetectorEventFamily tecf;
+//  boolean startDriv, stopDriv, startPark, boldodging, avoidDeath = false;
+
+    public SmokeDetectorEventHandler(KaaClient kaaClient) {
+        this.kaaClient = kaaClient;
+
+        EventFamilyFactory eventFamilyFactory = kaaClient.getEventFamilyFactory();
+        tecf = eventFamilyFactory.getSmokeDetectorEventFamily();
+
+        List<String> listenerFQNs = new LinkedList<>();
+
+        tecf.addListener(new MindstormsEventFamily2.Listener() {
+            @Override
+            public void onEvent(org.kaaproject.kaa.schema.mindstorms2.InfoResponseEvent infoResponseEvent, String s) {
+               // KaaManager.displayToast("Received Info Response Event");
+
+            }
+
+            @Override
+            public void onEvent(StartedDriving startedDriving, String s) {
+                Log.d("CarStart", "***Started driving***");
+
+            }
+
+            @Override
+            public void onEvent(StoppedDriving stoppedDriving, String s) {
+                Log.d("CarStop", "***Stopped Driving***");
+
+            }
+
+            @Override
+            public void onEvent(StartedParking startedParking, String s) {
+                Log.d("CarStart", "***Started Pariking***");
+
+            }
+
+            @Override
+            public void onEvent(Dodging dodging, String s) {
+                Log.d("CarDogged", "***Car Dogged***");
+            }
+
+            @Override
+            public void onEvent(AvoidedDeath avoidedDeath, String s) {
+                Log.d("AvoidDeath", "*** Car Turned***");
+            }
+        });
+
+        // Find all the listeners listening to the events from the FQNs list.
+        kaaClient.findEventListeners(listenerFQNs, new FindEventListenersCallback() {
+            // Perform any necessary actions with the obtained event listeners.
+            @Override
+            public void onEventListenersReceived(List<String> eventListeners) {
+                Log.d("MindstormEvHand", eventListeners.size() + " event listeners received");
+            }
+
+            // Perform any necessary actions in case of failure.
+            @Override
+            public void onRequestFailed() {
+                Log.d("MindstormEvHand", "Request failed");
+            }
+        });
+    }
+
+
+    public boolean isStartDriv() {
+        return startDriv;
+    }
+
+    public void setStartDriv(boolean startDriv) {
+        this.startDriv = startDriv;
+    }
+
+    public boolean isStopDriv() {
+        return stopDriv;
+    }
+
+    public void setStopDriv(boolean stopDriv) {
+        this.stopDriv = stopDriv;
+    }
+
+    public boolean isStartPark() {
+        return startPark;
+    }
+
+    public void setStartPark(boolean startPark) {
+        this.startPark = startPark;
+    }
+
+    public boolean isBoldodging() {
+        return boldodging;
+    }
+
+    public void setBoldodging(boolean boldodging) {
+        this.boldodging = boldodging;
+    }
+
+    public boolean isAvoidDeath() {
+        return avoidDeath;
+    }
+
+    public void setAvoidDeath(boolean avoidDeath) {
+        this.avoidDeath = avoidDeath;
+    }
+
+    public void sendStartDrivingEvent(){
+        tecf.sendEventToAll(new StartDriving());
+    }
+*/
+}

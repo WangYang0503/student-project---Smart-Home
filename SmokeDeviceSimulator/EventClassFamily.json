@@ -1,0 +1,35 @@
+[
+  {
+    "namespace": "smart_things.smoke.schema",
+    "name": "InfoRequestEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.smoke.schema",
+    "name": "InfoResponseEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "SmokeDetected",
+        "type": "boolean"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.smoke.schema",
+    "name": "smokeDetectionEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.smoke.schema",
+    "name": "backToNormalEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  }
+]
