@@ -1,0 +1,192 @@
+[
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "InfoRequestEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "type": "enum",
+    "classType": "object",
+    "name": "WaterLevelTypes",
+	"symbols" : ["UNKNOWN", "EMPTY", "LESS", "HALF", "FULL"]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "type": "enum",
+    "classType": "object",
+    "name": "StrengthTypes",
+	"symbols" : ["UNKNOWN", "WEAK", "MEDIUM", "STRONG"]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "type": "enum",
+    "classType": "object",
+    "name": "StatusTypes",
+	"symbols" : ["UNKNOWN", "READY", "BREWING", "GRINDING"]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "InfoObject",
+    "type": "record",
+    "classType": "object",
+    "fields": [
+      {
+        "name": "Status",
+        "type": "smart_things.coffee.schema.StatusTypes"
+      },
+      {
+        "name": "Carafe",
+        "type": "boolean"
+      },
+      {
+        "name": "Filter",
+        "type": "boolean"	  
+      },	  
+      {
+        "name": "WaterLevel",
+        "type": "smart_things.coffee.schema.WaterLevelTypes"
+      },
+      {
+        "name": "Strength",
+        "type": "smart_things.coffee.schema.StrengthTypes"
+      },
+      {
+        "name": "CupsNumber",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "InfoResponseEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "InfoObject",
+        "type": "smart_things.coffee.schema.InfoObject"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "AlreadyBrewingEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "TechnicalErrorEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "ErrorType",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "NoCarafeEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "NoWaterEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "BrewingFinishedEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "LowWaterEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "SetCupsEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "NumberofCups",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "SetStrengthEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "Strenght",
+        "type": "smart_things.coffee.schema.StrengthTypes"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "SetHotplateTimeEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "Time",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "ToggleBrewingTypeEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "ConnectEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "DisconnectEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "StartBrewingEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  },
+  {
+    "namespace": "smart_things.coffee.schema",
+    "name": "StopBrewingEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [ ]
+  }
+]

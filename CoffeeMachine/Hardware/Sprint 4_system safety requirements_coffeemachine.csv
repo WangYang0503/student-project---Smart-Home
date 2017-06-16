@@ -1,0 +1,7 @@
+Safety Constraints;
+ID;Name
+1;The coffee machine should be started, when there is a command (signal) from the mobile phone or other functions. 
+2;The coffee machine should be off, when there is no starting command (signal) from the mobile phone or other functions. 
+3;The starting of the coffee machine should be realtime, when there is a command from the mobile phone or ther functions. 
+4;When there is a harmful environment condition, the coffee machine should have the capability to reconize it and change to a safe mode.
+5;When the coffee machine is operating, it should not be interfered by the human factors.
