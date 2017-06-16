@@ -1,0 +1,20 @@
+WiFi-Dongle fuer Lego-Mindstorms EV3:
+
+Von LEGO empfohlen:
+-----------------
+NETGEAR WNA1100 WLAN STICK N150 (€ 11,76)
+http://www.conrad.biz/ce/de/product/973865/WLAN-Stick-USB-20-150-MBits-Netgear-WNA1100
+
+
+Mit Work-Around (Firmware-Update):
+-----------------
+EDIMAX EW-7811UN Wireless USB Adapter, 150 Mbit/s, IEEE802.11b/g/n (€ 6,85)
+https://www.amazon.de/Edimax-EW-7811Un-N150-Wireless-Adapter/dp/B003MTTJOY?ie=UTF8&camp=1634&creative=19450&creativeASIN=B003MTTJOY&linkCode=as2&redirect=true&ref_=as_li_ss_tl&tag=awarofwhi-21
+Erklärung:
+http://thetechnicgear.com/2014/04/howto-configure-wifi-edimax-ew-7811un-mindstorms-ev3/
+
+
+Micro-SD-Karte:
+Wird benötigt, um andere Firmware (z.B. LEJOS, Java for LEGO Mindstorms) aufzuspielen.
+Da das Lego-Modell nur einen minimalen Teil des Gesamtprojekts einnimmt, reicht eine Programmierung in C eigentlich aus.
+Das Aufspielen einer anderen Firmware ist aus meiner Sicht nicht nötig und daher auch keine Micro-SD-Karte.
