@@ -1,0 +1,94 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="EditTextThemeRoomNameTheme">
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">@color/primary_dark</item>
+        <item name="colorControlActivated">@color/primary_dark</item>
+        <item name="android:colorControlHighlight">@color/primary_dark</item>
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:textColorHint">@color/primary_dark</item>
+
+        <!--<item name="android:textSize">14sp</item>&ndash;&gt;-->
+    </style>
+
+    <style name="EditTextThemeRoomName">
+        <item name="android:theme">@style/EditTextThemeRoomNameTheme</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <style name="EditTextThemePortRedTheme">
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">@color/red</item>
+        <item name="colorControlActivated">@color/red</item>
+        <item name="android:colorControlHighlight">@color/red</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textColorHint">@color/red</item>
+
+        <!--<item name="android:textSize">14sp</item>&ndash;&gt;-->
+    </style>
+
+    <style name="EditTextThemePortRed">
+        <item name="android:theme">@style/EditTextThemePortRedTheme</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <style name="EditTextThemePortGreenTheme">
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">@color/green</item>
+        <item name="colorControlActivated">@color/green</item>
+        <item name="android:colorControlHighlight">@color/green</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textColorHint">@color/green</item>
+
+        <!--<item name="android:textSize">14sp</item>&ndash;&gt;-->
+    </style>
+
+    <style name="EditTextThemePortGreen">
+        <item name="android:theme">@style/EditTextThemePortGreenTheme</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <style name="EditTextThemePortBlueTheme">
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:singleLine">true</item>
+        <item name="colorControlNormal">@color/blue</item>
+        <item name="colorControlActivated">@color/blue</item>
+        <item name="android:colorControlHighlight">@color/blue</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColorHint">@color/blue</item>
+
+        <!--<item name="android:textSize">14sp</item>&ndash;&gt;-->
+    </style>
+
+    <style name="EditTextThemePortBlue">
+        <item name="android:theme">@style/EditTextThemePortBlueTheme</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <item name="lvToDoList" type="id" />
+</resources>

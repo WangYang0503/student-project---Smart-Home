@@ -1,0 +1,156 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addLightLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/light_change_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/change_color" />
+
+        <TextView
+            android:id="@+id/light_room_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/light_change_color"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/room_name" />
+
+        <EditText
+            android:id="@+id/light_room_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/light_room_name_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin" />
+
+        <TextView
+            android:id="@+id/light_red_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/light_room_name"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/red" />
+
+        <TextView
+            android:id="@+id/light_red_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/light_red_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:paddingTop="8dp"
+            android:text="0" />
+
+        <SeekBar
+            android:id="@+id/light_red_bar"
+            style="@style/Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@+id/light_red_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toStartOf="@id/light_red_counter"
+            android:indeterminate="false"
+            android:max="255" />
+
+        <TextView
+            android:id="@+id/light_green_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/light_red_bar"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/green" />
+
+        <TextView
+            android:id="@+id/light_green_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/light_green_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:paddingTop="8dp"
+            android:text="0" />
+
+        <SeekBar
+            android:id="@+id/light_green_bar"
+            style="@style/Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@+id/light_green_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toStartOf="@id/light_green_counter"
+            android:indeterminate="false"
+            android:max="255"/>
+
+        <TextView
+            android:id="@+id/light_blue_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/light_green_bar"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/blue" />
+
+        <TextView
+            android:id="@+id/light_blue_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/light_blue_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:paddingTop="8dp"
+            android:text="0" />
+
+        <SeekBar
+            android:id="@+id/light_blue_bar"
+            style="@style/Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@+id/light_blue_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_toStartOf="@id/light_red_counter"
+            android:indeterminate="false"
+            android:max="255" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/primary_dark"
+            android:text="@string/btn_confirm"
+            android:textColor="@android:color/white" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,201 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="smart_things.app.android.gui.StatusFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:id="@+id/status_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/status_kaa_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/kaa"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/status_kaa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/not_connected"
+                    android:textColor="@color/primary_text" />
+
+            </TableRow>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/divider" />
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/status_car_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/car"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/status_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/not_connected"
+                    android:textColor="@color/primary_text" />
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:rotation="90"
+                    android:src="@drawable/ic_battery_std_black_24dp" />
+
+                <TextView
+                    android:id="@+id/status_car_battery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="- -"
+                    android:textColor="@color/primary_text" />
+
+            </TableRow>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/divider" />
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/status_coffee_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/coffee"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/status_coffee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/not_connected"
+                    android:textColor="@color/primary_text" />
+
+            </TableRow>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/divider" />
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/status_door_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/doors"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/status_door"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/not_connected"
+                    android:textColor="@color/primary_text" />
+
+            </TableRow>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/divider" />
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/status_garage_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/garage_door"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/status_garage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/not_connected"
+                    android:textColor="@color/primary_text" />
+
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/status_table"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/divider" />
+
+        <Button
+            android:id="@+id/button_emergency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:background="@color/primary"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:text="@string/exit_emergency_mode"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,140 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="smart_things.app.android.gui.DoorFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/garage_door_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/garage_door"
+            android:textColor="@color/primary_text"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/garage_icon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:tint="@color/primary_dark"
+            android:tintMode="src_in"
+            app:srcCompat="@drawable/ic_garage" />
+
+        <TextView
+            android:id="@+id/garage_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/garage_door_label"
+            android:layout_below="@+id/garage_door_label"
+            android:layout_marginTop="12dp"
+            android:layout_toStartOf="@+id/garage_icon"
+            android:text="@string/garage_description"
+            android:textColor="@color/primary_text"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/garage_button"
+            android:layout_width="120dp"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/garage_description"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="16dp"
+            android:background="@color/primary"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:id="@+id/door_divider0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/garage_button"
+            android:layout_marginEnd="@dimen/divider_horizontal_margin"
+            android:layout_marginStart="@dimen/divider_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/divider" />
+
+
+        <TextView
+            android:id="@+id/house_door_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/garage_door_label"
+            android:layout_below="@+id/door_divider0"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/house_door"
+            android:textColor="@color/primary_text"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/house_door_icon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/door_divider0"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:tint="@color/primary_dark"
+            android:tintMode="src_in"
+            app:srcCompat="@drawable/ic_home_black" />
+
+        <TextView
+            android:id="@+id/house_door_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/garage_door_label"
+            android:layout_below="@+id/house_door_label"
+            android:layout_marginTop="12dp"
+            android:layout_toStartOf="@+id/house_door_icon"
+            android:text="@string/house_description"
+            android:textColor="@color/primary_text"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/house_door_button"
+            android:layout_width="120dp"
+            android:layout_height="36dp"
+            android:layout_alignStart="@id/garage_button"
+            android:layout_below="@+id/house_door_description"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/primary"
+            android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:id="@+id/garage_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignEnd="@+id/garage_button"
+            android:layout_alignStart="@+id/garage_button"
+            android:layout_alignTop="@+id/garage_button"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/house_door_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignEnd="@+id/house_door_button"
+            android:layout_alignStart="@+id/house_door_button"
+            android:layout_alignTop="@+id/house_door_button"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+</FrameLayout>

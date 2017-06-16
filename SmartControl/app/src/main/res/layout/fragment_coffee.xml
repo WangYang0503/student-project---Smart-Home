@@ -1,0 +1,175 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coffee_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:fillViewport="true"
+    tools:context="smart_things.app.android.gui.CoffeeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:id="@+id/water_level_indicator_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/water_level_indicator_label"
+            android:textColor="@color/primary_text" />
+
+        <TextView
+            android:id="@+id/water_level_indicator_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/water_level_indicator_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:text="unknown" />
+
+        <ProgressBar
+            android:id="@+id/water_level_indicator"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/water_level_indicator_label"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toStartOf="@id/water_level_indicator_counter"
+            android:progress="02" />
+
+        <TextView
+            android:id="@+id/cup_count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/water_level_indicator_label"
+            android:layout_below="@+id/water_level_indicator"
+            android:layout_marginTop="16dp"
+            android:text="@string/coffee_cups"
+            android:textColor="@color/primary_text" />
+
+        <SeekBar
+            android:id="@+id/cup_count_bar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/cup_count_label"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_toStartOf="@+id/cup_count_counter"
+            android:max="11"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:progress="3" />
+
+        <TextView
+            android:id="@+id/cup_count_counter"
+            android:layout_width="24dp"
+            android:layout_height="36dp"
+            android:text="s"
+            android:layout_alignEnd="@+id/grinder_toggle"
+            android:layout_below="@+id/cup_count_label"
+            android:paddingTop="8dp" />
+
+        <Switch
+            android:id="@+id/grinder_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_alignStart="@+id/cup_count_label"
+            android:layout_below="@+id/cup_count_bar"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/grinder_label"
+            android:textColor="@color/primary_text" />
+
+        <RadioGroup
+            android:id="@+id/strength_group"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/grinder_toggle"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@drawable/button_selector_group"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/strength_weak"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:background="@drawable/button_selector"
+                android:button="@null"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:text="@string/coffee_strength_weak" />
+
+            <RadioButton
+                android:id="@+id/strength_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/button_selector"
+                android:button="@null"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="@string/coffee_strength_medium" />
+
+            <RadioButton
+                android:id="@+id/strength_strong"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:background="@drawable/button_selector"
+                android:button="@null"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:text="@string/coffee_strength_strong" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/heizplatteId"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:layout_alignEnd="@+id/coffee_cook_bt"
+            android:layout_below="@+id/coffee_cook_bt"
+            android:background="@color/primary_dark"
+            android:onClick="hotPlateListener"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:text="Hotplate"
+            android:textColor="@android:color/white" />
+            
+        <Button
+            android:id="@+id/coffee_cook_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:layout_alignEnd="@+id/grinder_toggle"
+            android:layout_below="@id/strength_group"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/primary_dark"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:text="@string/coffee_cook"
+            android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:id="@+id/coffee_cook_bt_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/coffee_cook_bt"
+            android:layout_alignEnd="@+id/coffee_cook_bt"
+            android:layout_alignStart="@+id/coffee_cook_bt"
+            android:layout_alignTop="@id/coffee_cook_bt"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</FrameLayout>
