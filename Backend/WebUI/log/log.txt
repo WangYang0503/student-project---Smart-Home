@@ -1,0 +1,8 @@
+Mär 12, 2017 10:29:13 PM smart_things.backend.server.main.MultiLogger info
+INFORMATION: Starting rule worker...
+Mär 12, 2017 10:29:13 PM smart_things.backend.server.main.MultiLogger info
+INFORMATION: Opening connection to KAA server...
+Mär 12, 2017 10:29:19 PM smart_things.backend.server.main.MultiLogger info
+INFORMATION: Web server is now running and available on port 7777
+Mär 12, 2017 10:29:40 PM smart_things.backend.server.main.MultiLogger info
+INFORMATION: The server will be restarted.
