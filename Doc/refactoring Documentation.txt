@@ -1,0 +1,40 @@
+Refactoring
+Stgr+A
+
+Layouts
+Klassen die nicht benötigt werden löschen
+Variablenamen anpassen
+Notification Class für Main ?
+
+Java:
+Toast auslagern
+Strings in ressources umwandeln -> deutsch Englisch anbieten
+
+Gui
+Klassen die nicht benötigt werden löschen
+Kommentare
+veraltete Methoden updaten
+extract Methods
+Variablennamen anpassen
+Hide method
+
+Kaa
+Kommentare
+extract Methods
+Variablennamen anpassen
+Hide method
+
+event hadler
+Kommentare
+extract Methods
+Variablennamen anpassen
+Hide method
+
+notifications
+Kommentare
+extract Methods
+Variablennamen anpassen
+Hide method
+
+
+

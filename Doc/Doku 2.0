@@ -1,0 +1,293 @@
+<br></br><center>Stupro SS 2016 - WS 2017
+
+<H1>
+<br>SMART THINGS</br>
+_Entwurf_</h1>
+<br></br>
+<br></br>
+__Version__: 1.13
+
+__Erstellt am:__ 27.05.2016
+
+__Zuletzt geändert am:__ 19.11.2016
+
+</center>
+<br></br><br></br><br></br><br></br><br></br>
+Inhalt
+
+__Kapitel 1__
+	Einleitung
+    Lizenz
+	Das Produkt Smart Things
+
+__Kapitel 2__
+	Architektur
+    Hardwarekomunikation
+    Kommunikation dirch Signale
+
+__Kapitel 3__
+    Hauspanel
+    Server
+    Rasberry Pi 3
+    Lichtansteuerung
+    Kaffeemaschine
+    Entwurfsentscheidungen
+
+__Kapitel 4__
+	Schnittstellen
+    Struktogramme für die App
+
+__Kapitel 5__
+	App
+	Versionshistorie
+
+<br></br><br></br>
+
+
+##<p>Kapitel 1</p>
+###<b>Einleitung</b>
+
+Ziel dieses Kapitel ist es den Leser einen Überblick über das entworfene Produkt und Entwurfsdokument zu verschaffen. Fragen über den Zweck des Produkts,  die gestellten Anforderungen sowie die betrachteten Prinzipien (Vorgehende Techniken) werden in den folgenden Abschnitten beantwortet.
+
+###<b><p>Lizenz</b><p>
+Dieses Dokument steht unter der <a href="http://creativecommons.org/licenses/by-nc/3.0/legalcode" title ="Titel"> Creative Common Public License 3.0</a> mit den Einschränkungen:
+<i>Namensnennung</i> und <i>nicht-kommerziell.</i> 
+Das bedeutet, dass Sie dieses Werk vervielfältigen, verbreiten, öffentlich zugänglich und verändern dürfen. Dabei muss jedoch beachtet werden, dass  Sie den Namen der Entwickler nennen müssen und  das Werk nicht für kommerzielle Zwecke genutzt werden darf.
+###Das Produkt Smart Things
+
+Zweck des unter dem Studienprojekt entstehende Produkt Smart Things ist es „smarte“ Hardware zu bauen. Unter „smart" wird hier ein Produkt verstanden, welches sich mit den bereits entwickelten Middlewares RIOT oder Kaa verbindet und durch Befehle der Software verschiedene Tätigkeiten ausübt ohne die Aufgaben direkt vom Nutzer zu bekommen.
+Das Ziel der Studienprojektes ist es,mindestens 3 Smart Things zu entwickeln. Daher hat sich das Entwicklerteam für eine Kaschiermaschine, eine Smarte Lichtanlage und ein intelligentes Auto entschieden.
+
+Die jeweiligen Anforderungen an die Smart Things sind:
+Kaffeemaschine: 
+Die Kaffeemaschine soll mit dem Smartphone mit Hilfe der "Smath Things" App, die im Rahmen des Studienprojekts ebenfalls entwickelt wurde bedient werden. In der App kann die Stärke des Kaffees, die Anzahl an Tassen eingestellt werden. Außerdem kann jeder Benutzer seine individuellen Daten für den Kaffee gespeichert werden. Die Kaffeemaschine, die hierbei verwendet wird ist die Smarter SMC10EU Coffee Maschine.
+
+Auto: 
+Mithilfe von LEGO Minestorm wird das Auto simuliert. Es soll automatisch einer Linie folgen können, selbständig einparken können und beim einparken in die Garage einen Kaffee brühen können. Zusätzlich soll das Auto mit den Lichtern des Hauses komunizieren, d.h. sobald das Auto in die Garage einparkt, sollen bestimmte Lichter im Haus angehen. Wenn das Auto die Garage verlässt, sollen bestimmte Lichter an gehen und andere wiederum ausgeschaltet werden.
+
+Lichtanlage: 
+Um die Hausbeleuchtung zu simulieren wurde ein Modellhaus aus Holz gebaut, welches mit RGB LED Lichtern betrieben wird. Durch das Lenovo Tablet sollen alle Lichter individuell ansteuerbar und eventuell auch dimmbar sein.
+
+<br></br><br></br>
+##Kapitel 2
+###Architektur
+
+In diesem Studienprojekt gibt es drei Hauptkomponenten: 
+* die Steuerung per Server, 
+* die universelle Schnittstelle und 
+* die Geräte. 
+
+Kaa oder Riot sollen als Software für den Server verwendet werden. Je nachdem welche Software verwendet wird, muss die Datei in XML oder JSON-Code übersetzt werden. An diesem Server wird eine neutrale Schnittstelle angebaut. Hierbei sollen die Geräteinformationen in XML-Format oder per JSON-Code übergeben werden und für das entsprechende Gerät übersetzt werden. Dann werden die Befehle an die jeweilige Hardware gesendet.
+Für die Kaffeemaschine wird eine eigene Adapter Schnittstelle benötigt, die an die universelle Schnittstelle integriert ist. Somit muss die Anwendung nicht auf ein extra Rasperry Pi geladen werden. Die Lichtsteuerung wird über den Rasperry Pi gesteuert. 
+In jeder Schnittstelle muss angegeben werden, ob es mit Kaa oder Riot kommunizieren möchte. 
+
+<center><img src= "Entwurf_Bilder/Architektur.png"/></center>
+
+
+
+###Hardwarekommunikation
+
+Der Server leitet die Befehle von den Bedienungselementen weiter an den Banana Pi. Um die Verteilung der Befehle weiterzugeben wird ein Banana Pi benötigt, der per WLAN die Geräte ansteuert. Der Sensor von jedem Endprodukt empfängt die Befehle und ändert den Zustand des Geräts. Dies ermöglicht auch abzufragen, welches Gerät sich in welchem Zustand befindet. Zwischen der Zentralen Hardware und den Geräten werden die Informationen ausgetauscht, das heißt es liegt eine bidirektionale Beziehung zwischen Empfänger und dem Master vor.
+
+<center><img src= "Entwurf_Bilder/Hardware_Kommunikation.png"/></center>
+
+
+###Kommunikation durch Signale
+
+Die Signale werden von dem Master auf die einzelnen Sensoren verteilt. Die Signale kommen dann entweder von anderen Geräten oder von den Bedienungselementen.
+
+Die Kaffeemaschine hat folgende Signale:
+* Kaffee kochen
+* Kochvorgang unterbrechen
+* Brühstärke einstellen
+* Tassenanzahl einstellen
+* Warmhaltezeit der Warmhalteplatte einstellen
+
+Es gibt 4 Zustände der Kaffeemaschine:
+* Bereit
+* Wasser brühen
+* Bohnen mahlen
+* Karaffe nicht vorhanden
+
+Die Kafeemaschine sendet folgende Statusmeldungen:  
+* Anzahl der eingestellten Tassen 
+* Eingestellte Brühstärke
+* Wasserstand
+
+Behandlung der Befehle durch Exceptions: 
+* Ungültige Parameter 
+* Unbekannter Rückgabecode 
+* Keine Antwort der Kaffeemaschine
+* Kaffee wird bereits gekocht
+* Niedriger Wasserstand 
+* Kein Wasser
+* Keine Karaffe  
+
+Mindstorm Signale:
+* Geschwindigkeit
+* Distanz
+* An/ Ausschalten
+
+
+<center><img src= "Entwurf_Bilder/Hardware_Tabelle.png"/></center>
+
+##Kapitel 3
+###Hauspanel
+
+Der Benutzer bedient das Lenovo Tablet oder das Smartphone durch die "Smart Things" App. Die App sendet Befehle an den Banana Pi. Die Steuerung ist aufugrund der größe auf dem Tablet übersichtlicher als auf einem Smatphone. Es verwendet zudem auch WLAN zur Signalübertragung. Dabei sollte beachtet werden, dass dieses Lenovo Tablet Android 4.4 verwendet und nicht auf der aktuellsten Version ist.
+
+###Server
+
+Der Banana Pi dient als Server und leitet Befehle an das entsprechende Gerät weiter. Des Weiteren verfügt es ebenfalls über eine WLAN Schnittstelle und über 40 Eingänge, an denen weitere Endgeräte angeschlossen werden können.
+
+###Rasperry Pi 3
+
+Der Rasberr Pi 3 benötigt die Befehle oder sogenannte Gerätecodes vom Banana Pi 3, um die Lichter zu steuern. Auf dem Rasperry Pi 3 ist der Code vorhanden, um die RGB LEDs anzusteuern und die Schnittstelle zu implementieren. Der große Speicherplatz bietet den Vorteil die SDK von Kaa oder Riot darauf zu installieren.
+
+###Lichtansteuerung
+
+Die folgenden Geräte werden für die Lichtsteuerung benötigt:
+* RGB LEDs
+* Wiederstände
+* Steckplatinen
+* Steckbrücken
+
+###Kaffeemaschine
+
+Smarter SMC10EU Coffee verfügt über eine intrigierte App und eine eingebaute WLAN Kommunikation. Der Mahlgrad der Bohnen ist einstellbar. Zusätzlich zeigt die Wasserstandanzeige, wie viele Tassen gebrüht werden können. Außerdem kann die Kaffeezubereitung voreingestellt werden. Es werden verschiedene Modi angeboten:
+* Aufweck-Modus: verursacht einen Alarm-Ton, um sofort ein Kaffee bereit zu stellen.
+* Welcome-Home-Modus: Smarter Coffee startet, sobald man durch die Tür tritt.<br></br>
+
+###Modellhaus
+In das Modellhaus, was im Rahmen des Studienprojekts selbst entwickelt und gebaut wurde, wird die Lichtanlage eingebaut, um die Lichtanlage besser presentieren zu können.
+<center><img src= "Entwurf_Bilder/Haus1.png"/></center>
+
+<center><img src= "Entwurf_Bilder/Haus2.png"/></center>
+
+###Entwurfsentscheidungen
+####Universelle Schnittstelle
+
+Da unser Entwicklerteam sich entschieden hat Kaa und Riot zu verwenden, brauchen wir eine Schnittstelle, die mit beiden Middlewares zurechtkommt. Eoraufhin wir uns auf die universelle Schnittstelle geeinigt haben. Zudem bietet es sich an, die Schnittstelle auf jedem Gerät direkt zu implementieren. 
+
+
+##Kapitel 4
+
+###Schnittstellen
+Schaubild der Schnittstellen des Projektes:
+<center><img src= "Entwurf_Bilder/Schnittstellen.png"/></center>
+
+Die Kommunikation verläuft zwischen dem Rasberry Pi und dem KAA oder Riot Server durch eine Rest API.
+
+####Externe Universelle Schnittstelle
+Grundlegende Architektur
+<center><img src= "Entwurf_Bilder/UniverselleSchnittstelle.png"/></center>
+
+
+Per Identifier wird der eingehende Datei-Typ erkannt. Nach dem erkennen, wird das entsprechende File an den jeweiligen Translator weitergeleitet.
+
+####Klassendiagramm Variante 1
+
+<center><img src= "Entwurf_Bilder/KlassendiagrammSchnittstelle1.png"/></center>
+
+Der Identifier und der Translator bilden unabhängige Klassen, die dadurch leichter ergänzt werden können. Außerdem kann dadurch für jeden Datentyp eine eigene Subklasse gebildet werden, die Besonderheiten von Sprachen einfacher beachten kann.
+
+####Klassendiagramm Variante 2
+
+<center><img src= "Entwurf_Bilder/KlassendiagrammSchnittstelle2.png"/></center>
+
+
+
+Sowohl der Interpreter als auch der Translator ist in der Controller-Klasse zusammengefasst. Nachteil dabei ist, dass die Erweiterung nicht so einfach möglich ist und eventuell mehr Aufwand betrieben werden muss. Die Besonderheiten besteht darin, Typen zu berücksichtigen.
+
+####Struktogramme für die App
+<center><img src= "Entwurf_Bilder/AppStruktogramm.png"/></center>
+
+<center><img src= "Entwurf_Bilder/AppEinstellungStr.png"/></center>
+
+Mithilfe von Dialogen kann ein Pin bearbeitet oder erstellt werden.
+
+
+##Kapitel 5
+
+###App
+
+Vorraussetzung ist, das zu Kaa eine Verbindung existiert, damit man auf die Hauptoberfläche gelangt.
+
+Die App besteht aus einer Hauptoberfläche, die aus den Hardwareelementen, deren letzten Notifications, Kaa/Riot Verbindungen, Hilfe, Einstellungen und Exit besteht.
+
+Die Lizenz und das Impressum sind auf jeder Oberfläche vorhanden.
+
+<center><img src= "stupro_Bilder/Lizenz.png"/></center>
+
+Auf der Oberfläche der Kaffeemaschine kann ausgewählt werden, ob der Benutzer den Filder oder das Mahlwerk benutzen will, welche stärke der Kaffe haben soll und wie viele Tassen er möchte. Zusätzlich wird der Wasserstand angeteigt. Der Benutzer hat zusätzlich die Möglichkeiten, die Heizplate anzustellen, Kaffee zu kochen oder den Vorgang abzubrechen.
+
+<center><img src= "stupro_Bilder/Kaffeemaschine.png"/></center>
+
+Das Licht kann in einzelenen Räumen an- und ausgeschaltet werden.
+
+Über die Einstellungen gelang der Benutzer auf die Kaa-Adminstrationsseite.
+Die Anwesenheitssimulation ermöglich dem Benutzer einen Zeitraum einzustellen, in dem er im Urlaub ist. In dem gewählten Zeitraum wird eine automatische oder eine eigene Simulation aktiviert. Diese Simulation simuliert die Anwesenheit von Bewohnern, durch die Lichtanlage.
+Zusätzlich kann die Verbindung zu Kaa oder Riot eingestellt werden.
+Unter Hilfe befinden sich Dokumentationen, die beim Bedienen der App helfen.
+
+<center><img src= "stupro_Bilder/Einstellungen.png"/></center>
+
+<center><img src= "stupro_Bilder/About.png"/></center>
+ 
+<center><img src= "stupro_Bilder/Übersicht.png"/></center>
+
+<center><img src= "stupro_Bilder/Team.png"/></center>
+
+<center><img src= "stupro_Bilder/Autosteuerung.png"/></center>
+
+<br></br><br></br>
+###Versionshistorie
+Version 1.13 (19.11.2016)
+
+		Bilder in Kapitel 5 erneuert - JR
+Version 1.12 (30.10.2016)
+
+		Überarbeitung der gesammten Dokumentation - JR
+Version 1.11 (19.10.2016)
+
+		Überarbeitung Kapitel 1-5 - JR
+Version 1.10 (19.09.2016)
+
+		Überarbeitung Kapitel 4,Kaitel 5 - AB
+Version 1.9 (23.8.2016)
+
+		Überarbeitung Kapitel 4,Kaitel 5 - AB
+Version 1.8 (25.7.2016)
+
+		Überarbeitung Kapitel 4, Schnittstellen- L
+
+Version 1.7 (21.7.2016)
+
+		Überarbeitung Kapitel 5, Abschnitt Kommunikation -AB
+
+Version 1.7 (21.7.2016)
+
+		Überarbeitung Kapitel 5, Abschnitt Kommunikation -AB
+
+Version 1.6 (7.7.2016)
+
+		Überarbeitung -A
+Version 1.5 (5.7.2016)
+
+		Konvertierung in Markdown- LK
+Version 1.4(20.06.2016)
+
+		Komponenten Kapitel hinzugefügt- AB
+Version 1.3 (20.06.2016)
+
+		Grober Entwurf universelle Schnittstelle – MK
+Version 1.2 (09.06.2016)
+
+		Grobe Architektur
+Version 1.1 (02.06.2016)
+
+		Ausarbeitung des Entwurfs
+
+Version 1.0 (27.05.2016)
+
+	Erstellen, erster Entwurf des Inhalts

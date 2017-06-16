@@ -1,0 +1,92 @@
+Aufbau der KAA-SDKs:
+
+CoffeeDevice:
+------------------
+SDK token: -kOPtveEjCCazfiMZ5sAp0kjaMg
+SDK name: AppCoffeeCarLightDoorSmoke (2)
+Configuration schema: Generated (v.1)
+Client-side EP profile schema: Generated (v.0)
+Notification schema: Generated (v.1)
+Log schema: Generated (v.1)
+
+Event family mappings:
+
+CoffeeMachine Event Class Family|V7
+Mindstorms Event Class Family (2)|V2
+SmokeDetector Event Class Family|V1
+LightControl Event Class Family|V3
+Door Event Class Family|V3
+
+
+CoffeeMachine:
+------------------
+SDK token: tMK3zNXuHAuNwLybecyrl37L-VY
+SDK name: CoffeeMachineSDK (3)
+Configuration schema: Generated (v.1)
+Client-side EP profile schema: Generated (v.0)
+Notification schema: Generated (v.1)
+Log schema: Generated (v.1)
+
+Event family mappings:
+
+CoffeeMachine Event Class Family|V7
+
+
+Door:
+------------------
+SDK token: KwhGTnpyr4edrZh-ttzCpyryc8g
+SDK name: DoorSmoke (2)
+Configuration schema: Generated (v.1)
+Client-side EP profile schema: Generated (v.0)
+Notification schema: Generated (v.1)
+Log schema: Generated (v.1)
+
+Event family mappings:
+
+SmokeDetector Event Class Family|V1
+Door Event Class Family|V3
+
+
+LightControl:
+------------------
+SDK token: 48I0KJvQncD9QBo6AjC51nGbeIE
+SDK name: LightControlSmoke (2)
+Configuration schema: Generated (v.1)
+Client-side EP profile schema: Generated (v.0)
+Notification schema: Generated (v.1)
+Log schema: Generated (v.1)
+
+Event family mappings:
+
+SmokeDetector Event Class Family|V1
+LightControl Event Class Family|V3
+	
+
+MindStorm:
+------------------
+SDK token: 2vgoVKWngAya3alqLHtYztlMMvQ
+SDK name: MindstormsSDKProfile (6)
+Configuration schema: Generated (v.1)
+Client-side EP profile schema: Generated (v.0)
+Notification schema: MindStormThings (v.2)
+Log schema: Generated (v.1)
+
+Event family mappings:
+
+CoffeeMachine Event Class Family|V7
+Mindstorms Event Class Family (2)|V2
+Door Event Class Family|V3
+
+
+SmokeDetector:
+------------------
+SDK token: clXsIARzWzAnds4R8poppZ_Ll74
+SDK name: SmokeDetector
+Configuration schema: Generated (v.1)
+Client-side EP profile schema: Generated (v.0)
+Notification schema: Generated (v.1)
+Log schema: Generated (v.1)
+
+Event family mappings:
+
+SmokeDetector Event Class Family|V1
