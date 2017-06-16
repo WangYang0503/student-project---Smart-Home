@@ -1,0 +1,142 @@
+#+TITLE: Abschlussbericht
+#+AUTHOR: Alexander, Anja, Benedikt, David, Iheb, Jan, Joana, Lia, Lukas, Mario, Michael, Simon, Sujanthan
+
+* Auftrag (Joana)
+Mindestens 3 smarte Geräte die miteinander über eine Middleware kommunizieren entwickeln.
+
+* Organisation
+** Personal (Michael)
+- teilgruppen
+- klassischer führer
+- einzelne spezialisten
+- safety&security "experte" (rtl)
+
+Das Team wurde in einzelne Teilgruppen (Subteams) aufgeteilt. Jedes dieser Subteams war für einen Teilbereich des Projekts zuständig. In diesen Teilbereichen haben sich dann Spezialisten für einelne Details (z.B. KAA, Mindstorms, Safety-Experte) entwickelt. 
+
+| Name       | Arbeitsbereich                                                       |
+|------------+----------------------------------------------------------------------|
+| Alexander  | App-Design, Coffee-Server                                            |
+| Anja       | App-Entwicklung, Einkauf                                             |
+| Benedikt   | Demoboard, Garage                                                    |
+| David      | Smart-Car, Smart-Garage                                              |
+| Iheb       | Demoboard, Garage, Haus                                              |
+| Jan        | Backend, Coffee API, Doku, Infrastruktur, KAA, Tools                 |
+| Joana      | Demoboard, Haus                                                      |
+| Lia        | App-Entwicklung, App-Design, Organisation, Einkauf                   |
+| Lukas      | App-Design                                                           |
+| Mario      | Infrastruktur, KAA, Hardware, Smart-Licht                            |
+| Michael K. | Einkauf, Safety-Expert                                               |
+| Michael S. | Teamlead, Organisation, Architektur, Infrastruktur, Systemdesign, QA |
+| Simon      | Baum, Demoboard, Kaffeemaschine                                      |
+| Sujanthan  | Smart-Car, Smart-Garage                                              |
+| Wolfgang   | Scrum-Master                                                         |
+| Yang       | Product Owner, Safety-Expert (Extern)                                |
+
+** Projekt (Simon)
+- scrum
+- maven
+- jenkins
+- git
+- jira
+- andere tools
+* Erreichtes
+** Übersicht
+Entwickelt wurden:
+- Smart Home
+  - Smart Licht
+  - Smart Coffeemachine
+    - Smart Coffee API
+  - Smart Door
+  - Smart Garage
+- Smart Car
+- Control App
+- Backend
+- Infrastruktur dafür aufgebaut
+- Doku
+
+zur Veranschaulichung wurde ein "Demo-Board" mit Haus, Garage und Straße gebaut.
+
+** Smart Home
+*** Smart Licht (Mario) 
+**** Hardware
+**** Software
+*** Smart Coffemachine (Jan)
+**** Smart Coffee API
+*** Smart Door (Bene)
+*** Smart Garage (Bene, Iheb)
+** Smart Car (Sujanthan)
+** Control App (Anja)
+** Backend (Jan)
+** Infrastruktur (siehe Doku, Alex)
+- kaa
+- raspi
+- banana
+- ...
+** Doku
+* Persönliche Beitrag
+** Alexander
+** Anja
+** Benedikt
+** David
+** Iheb
+** Jan
+** Joana
+** Lia
+** Lukas
+Beteiligt an:
+- Lizenz von Riot + Lizens von Kaa
+- Riot auf eigenem PC
+- Kaa auf eigenem PC testen mit Notifications
+- Kaffeemaschine raussuchen
+- Kaa-Kaffemaschine Kommunikation
+- Coffe Timer Alarm + Liste
+- Kaffee auch wenn App geschlossen/App automatisch starten
+- Workshop IoT mit Jan und Michael
+- SmokeDetector
+- Neue App GUI Entwurf + Menü + Tabs + Lichter
+** Mario
+** Michael Keppler
+Safety-Experte (Teamintern)
+Ist vor Projektende rausgeprüft worden
+** Michael Steinert
+Übernommene Aufgaben:
+- Projekt Planung und Durchführung
+  - Sichten der Kundenanforderungen
+  - Umwandlungen der Anforderungen in Epics / User Stories / Tasks
+  - Aufteilung der Stories auf Teammitglieder
+  - Zuteilung von weiterbildenden Tätigkeiten an Teammitglieder
+- Teamleitung
+  - Organisation 
+  - Kontrolle der Arbeit an den Stories
+  - Planung, Organisation, Durchführung, Moderation von Meetings
+  - Ansprechpartner für Fragen aller Art                                                              
+- Zeitgleich Mitarbeit am Projekt
+  - Weit überdurchschnittliche Arbeitsleistung
+  - Infrastruktur
+  - Architektur
+  - Systemdesign
+  - QA, Tests, Verifikation
+
+** Simon
+** Sujanthan
+* Probleme (Lia)
+- riot
+- stark heterogenes team
+- aufgaben verteilung, deadlines nich gehalten
+- fehlender auftrag vom PO
+- fehlende erfahrung in teamorganisation (scrum-master, workshops,...)
+- safety-anforderungen nicht an sprints gekoppelt
+- aufwändiger beschaffungsprozess
+- anfangs keine hardware zur verfügung
+  
+* Lessons Learned (David)
+- teamorganisation hat sich nach und nach entwickelt
+- projekterfahrung
+- safetykultur
+- scrum (nur in stark modifizierter form für die realität geeignet)
+* Weitere Arbeiten (Simon)
+  
+- security
+- safety
+- features (neue geräte)
+  - netzteil für Demoboard organisieren (aktuelles ist leihgabe von mario)

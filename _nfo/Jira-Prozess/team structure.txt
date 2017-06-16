@@ -1,0 +1,10 @@
+assignee of task gets sidekick; sidekick is for testing and to talk about issues during development; assignee of task can ask whole team 
+sidekick gets noted in description of item
+
+sidekick reports to assignee of task and can be held responsible for his testing
+
+assignee of task reports to assignee of user story to which task belongs
+
+assignee of user story reports to assignee of epic to which user story belongs
+
+in case of doubt: talk to Michael Steinert

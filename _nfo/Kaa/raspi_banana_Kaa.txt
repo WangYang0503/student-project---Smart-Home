@@ -1,0 +1,27 @@
+IPs:
+raspi: 172.24.1.1
+banana: 172.24.1.10
+kaffeemaschine: 172.24.1.20
+car: 172.24.1.30
+doorsys: 172.24.1.40
+
+Login to banana pi:
+user: pi
+password: bananapi
+
+Login to raspberry pi:
+user: pi
+password: raspi
+
+
+kaa admin user:
+user: kaaAdmin
+pass: kaaAdmin
+
+tennant admin user:
+user: tenantAdmin
+pass: tenantAdmin
+
+developer user:
+user: Developer
+pass: developer

@@ -1,0 +1,53 @@
+Software to be installed:
+- JDK 8
+- Eclipse Mars.2
+- maven (from apache)
+- Glassfish 4.1 (NOT 4.1.1 !)
+- glassfish tools plugin for eclipse (from eclipse marketplace)
+- MySQL server
+- node.js
+- (npm) under windows included in node.js
+- grunt via npm, see readme.md in webapp subdirectory
+- bower via npm, see readme.md in webapp subdirectory
+- yeoman via npm, see readme.md in webapp subdirectory
+
+
+add maven to path
+
+set JAVA_HOME variable to your java installation if needed
+
+set ANDROID_HOME to your android sdk path (usually in %AppData%)
+
+
+ignore prerequisites in readme files, instead do this:
+- do as readme.md in riot root directory says until line 37
+- do as readme.md in server subdirectory says
+- add git to path of the correct user (admin / your user) if needed (bower fails with "git not in path")
+- do as readme.md in webapp subdirectory says in lines 63-64 (bower has to load a lot of stuff); probably optional, as run in every maven build
+
+settings.xml needs to be created in %userfolder%/.m2/settings.xml
+
+maven import all RIOT projects into eclipse
+
+replace pom.xml in RIOT root with the modified version from here
+
+- replace "/css/" with "/dist/css/" in /riot.webapp/app.less (line 6)
+- replace "/fullcalendar/" with "/fullcalendar/dist/" in /riot.webapp/app.less (line 11
+?- delete RuleFrameworkTest.java in /riot.server/src/test/java/.../RuleFrameworkTest.java
+- comment out line 31 "<module>android</module>" in /riot/pom.xml
+- comment out lines 43-53 "<dependency>...</dependency>" in /riot.integration-tests/pom.xml
+- delete TestMainActivity.java in /riot.integration-tests/src/test/java/.../TestMainActivity.java
+
+run in RIOT\webapp>grunt --force
+
+right click on riot -> run as -> maven build
+(enter "clean install" as goal (without ""))
+allow internet access for apps that ask (firewall pop ups), they need to download dependencies
+
+
+build time on core i5 460M: 6:11
+
+
+deploy contents of /riot.webapp/dist/ to webserver root
+
+=> throws error when trying to log in

@@ -1,0 +1,58 @@
+Allg. Info:
+Auf dem Server liegen keine wichtigen Daten, er wurde ausschließlich für den Kaa-Server
+aufgesetzt. Hierfür wurden mariaDB (nicht relational für Analysetechniken),
+MySQL und diverse andere Pakete installiert.
+
+Um mit dem Server zu Kommunizieren muss man sich über den Wlan-Router oder das
+Ethernetkabel an das LAN anschließen. Über Wlan wird mittels DHCP eine IP zugewiesen.
+Über Ethernet muss eine IP mit 192.168.0.x (x != 20 && x != 50) festgelegt werden.
+
+======
+
+KAA-Server Eigenschaften und Daten:
+
+Server Ip: 192.168.0.20
+Kaa-Webinterface: 192.168.0.20:8080
+
+Der Kaa-Server benötigt für die Entwicklung 3 verschiedene Benutzer:
+*Tenant Administrator: user: masermo pw: toomanysecrets
+*Kaa Administrator: user: devuser pw: toomanysecrets
+*Tenant Developer: user: mario pw: toomanysecrets
+
+In wieweit die einzelnen Benutzer genutzt werden müssen, ist auf der Seite von
+kaaproject.org nachzulesen.
+
+
+======
+
+Zugang Linux Server:
+
+Über SSH:
+ssh mario@192.168.0.20
+pw: toomanysecrets
+
+Am Notebook
+username: mario
+pw: toomanysecrets
+
+Der Benutzer ist Administrator! (Root), dh. bei sudo Eingaben wird dieses Passwort
+benötigt.
+
+
+=======
+
+Zugang Wlan:
+SSID: KaaProject
+pw: kaaproject
+
+=======
+
+Zugang Wlan Router:
+IP: 192.168.0.50
+user: dontTouch
+pw: toomanysecrets
+
+Sendeleistung z.Z. bei 20%. Muss möglicherweise je nach Anwendung angepasst werden.
+Statische IP s.o.
+DHCP enabled
+=======

@@ -1,0 +1,32 @@
+bug = task
+
+todo:
+items which need to be done and has not been started
+-> can only be moved to in progress by assignee after assignee made sure (with product owner) what has to be done for the items
+important: make sure that the user story belonging to a task is also set to "in progress" when the first task is started
+
+in progress:
+items on which work is currently done
+-> can only be moved to "in test" and only by the assignee when all work is done and developer has tested items
+
+in test:
+items which need to be tested
+-> user story: can only be moved to "in review" when assignee of the user story has made sure that every task is properly tested (assignee of the story will be held responsible for it !)
+-> task: can only be moved to "in review" by the sidekick
+-> NOTE: if Entwurf is tested by sidekick he should also check if code has high quality comments (class and method comments) 
+
+in review:
+items which need review
+-> task: can only be moved to done or back to in progress by the assignee of the belonging user story, who also needs to make sure that the documentation (entwurf) contains the newly developed piece
+-> user story: can only be moved to done when approved by the product owner
+
+done:
+items which are done
+when problem with item in this state: create a bug
+
+
+nfo from 25.08.2016 meeting:
+test task is for external sidekick (=sth. like QA) who checks user story to log work
+doku task is for doku writer to log work, gets infos from dev (=assignee of task)
+task needs not to be in every state during its lifetime
+assignee of user story = sidekick for tasks within it

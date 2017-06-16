@@ -1,0 +1,8 @@
+Der Link für den Jenkins Server
+
+https://lismore.informatik.uni-stuttgart.de/
+
+Benutzer : Eure Namen die ihr im Mail dokument angegeben habt.
+Passwort : Eure angegebene Email Addresse.
+
+Jeder im Team kann unser Jenkins Projekt Konfiguieren!

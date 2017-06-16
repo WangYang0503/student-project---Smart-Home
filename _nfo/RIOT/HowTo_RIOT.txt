@@ -1,0 +1,134 @@
+running glassfish from the repository should work if you have a mysql server with riot setup running
+
+
+if not use this procedure to build your own riot from the official source (git-hub)
+as an alternative you can use the already modified sources from the repository (of course you then need to skip the "fix" steps and maybe some others)
+
+
+Software to be installed / downloaded:
+- JDK 8
+- Eclipse Mars.2
+- maven (from apache)
+- Glassfish 4.1 (NOT 4.1.1 !; would end in crash during database setup)
+- glassfish tools plugin for eclipse (from eclipse marketplace)
+- maven integration for eclipse (from eclipse marketplace)
+- MySQL server
+- mysql-connector jar
+- node.js
+- (npm) under windows included in node.js
+- grunt via npm, see readme.md in webapp subdirectory
+- bower via npm, see readme.md in webapp subdirectory
+- yeoman via npm, see readme.md in webapp subdirectory
+
+
+
+do this in system context, so it applies for all users:
+(remember that doing this via command line under windows is not persistent)
+- add maven to path
+- 
+- set JAVA_HOME variable to your java installation (the JDK!)
+- set ANDROID_HOME to your android sdk path (usually in %AppData%)
+
+
+
+settings.xml needs to be created in %userfolder%/.m2/settings.xml with this as content:
+<settings
+        xmlns="http://maven.apache.org/Settings/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/Settings/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
+	<server>
+		<id>riotMySQL</id>
+		<username>%db_user%</username>
+		<password>%db_user_pass%</password>
+	</server>
+    </servers>
+</settings>
+
+(of course the placeholders (marked with %name%) need to be repaced with your actual data, its recommended to set the user to "riot"
+
+
+
+Import the Maven project
+- Open the import dialog via File->Import->...
+- Select `Maven->Existing Maven Projects` and click *Next*.
+- Select the folder with the cloned repository as root directory.
+
+
+
+fix RIOT:
+- replace pom.xml in RIOT root with the modified version from here (disables checkstyle)
+- replace "/css/" with "/dist/css/" in /riot.webapp/app.less (line 6)
+- replace "/fullcalendar/" with "/fullcalendar/dist/" in /riot.webapp/app.less (line 11)
+
+
+
+(might be skipped when not using eclipse)
+Add a new Server in Eclipse:
+`File->new->other->Server->Glassfish 4`
+- click *next*
+- Server root: `<path to glassfish root>`/glassfish
+- Java Development Kit: Java-8-oracle
+- click *finish*
+- uncheck "preserve sessions during redeployment"
+
+
+
+setup database
+- create user for riot application (recommended to name it "riot")
+- create database for the riot app (recommended to name it "riot")
+- grant all permissions on the database to the application user
+- unzip the package and put the jar into the domain/lib folder of your glassfish installation
+- restart glassfish and open the admin panel: http://localhost:4848/common/index.jsf
+- create a new JDBC connection pool to mysql JDBC->JDBC Connection Pools->New...
+  - Select MySql as Database Driver Vendor and javax.sql.ConnectionPoolDataSource as Resource Type, click next
+  - remove all existing properties, then:
+  - add properties "user:riot", "password:yourpassword", "databaseName:riot" and save
+- go back to jdbc and create a resource with the jndi name "jdbc/riot" and reference the connection pool
+- the jndi name can now be used to access the pool in the jee containers
+
+
+
+adjust the webapp so it works with glassfish:
+replace all occurences of "api/v1" with "riot/api/v1" in the following files (all under webapp):
+config.js
+auth-spec.js
+auth.js
+authentication-interceptor-spec.js
+
+
+
+possible commands, choose the ones you need / which work:
+
+create testdata
+- run "mvn generate-test-resources -Pmysql" from riot root directory
+
+run complete build
+- run "mvn clean install" from riot root directory
+
+run complete build without tests ( only needed for modified versions)
+- run "mvn -Dmaven.test.skip=true clean install" from riot root directory
+
+
+
+deploy application to webserver
+- open glassfish admin panel (usually found on port 4848)
+- go to applications
+- click deploy
+- select riot.war from /server/target
+- use /riot as context path
+
+
+
+deploy webapp to webserver
+- copy everything from /webapp/dist to the docroot of your glassfish
+
+
+
+access riot website via https (https://localhost:8181)
+add an exception for the not trusted ssl cert
+redirection from the http site (port 8080) does not work !
+
+
+
+have fun with riot
