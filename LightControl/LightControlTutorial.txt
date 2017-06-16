@@ -1,0 +1,66 @@
+LightControl-Tutorial/Info, Autor Mario Maser, 17.01.2017, st110881@stud.uni-stuttgart.de
+
+1.) Hardware
+Das Lichtsystem wird über ein Raspberry Pi 3 gesteuert. Da die GPIO-Ports nur wenig
+Strom liefern können, wurde ein Verstärkerplatine entwickelt. Beide Boards werden über
+ein Computernetzteil (5V) gespeist. Dabei gilt es zu beachten, dass die Eingänge der
+Verstärkerplatine mit den Ausgängen des Raspberrys verbunden werden. Die Platine
+unterstützt pro Ausgang 300mA Current. Das entspricht ca. 9 (einfarbigen) LEDs.
+
+Z.B.: GPIO Port 2 des Raspberrys wird mit Pin 1 der Verstärkerplatine verbunden. Der
+Gegenüberliegende Anschluss wird mit einem Kanal der LED Verbunden. Das Layout der
+Platine ist im GIT zu finden.
+
+ACHTUNG: Die Platine ist empfindlich gegenüber Spannungsspitzen. D.h. beim Arbeiten an 
+der Platine (Platinenrückseite) muss unbedingt geerdet werden,
+da die MOSFETs andernfalls beschädigt werden.
+
+2.) Software
+Auf dem Raspberry wurde Raspbian, eine Debian Distribution, installiert. Um alle
+Ausgänge möglichst effizient mit PWM (Pulse Width Modulation) ansteuern zu können,
+wird auf die Hardware PWM des Raspberrys zugegriffen. Diese Aufgabe übernimmt das
+Open Source Projekt pi-blaster. Dadurch wird eine äußerst geringe CPU-Auslastung
+erreicht, sodass die Kapazitäten für alle weiteren (erweiterten) Aufgaben des
+Smart Home genutzt werden können. Das LichtSystem wurde in Java geschrieben, wobei
+das System alle persistent zu speichernden Daten in einer xml-Datei (smarthome.xml) 
+speichert. Diese Datei kann angepasst werden. Dafür muss ZUVOR das System gestoppt,
+und nach dem bearbeiten neu gestartet werden, sodass die neuen Elemente geladen werden
+können.
+
+3.) Inbetriebnahme
+(Beachte, die Services werden beim Systemstart bereits geladen. Nachfolgend ist der
+manuelle Umgang beschrieben)
+
+Die Software wird als Service umgesetzt. Der Service ist zu starten mit:
+sudo service light_control_service start
+zum stoppen das letzte Argument (start) durch stop ersetzen.
+
+Das Selbe gilt für die PWM Steuerung pi-blaster.
+sudo service pi-blaster stop
+Gestartet wird der service innerhalb der Java-Applikation, sodass es nicht nötig ist,
+diesen manuell zu starten.
+
+Wichtig ist, dass die Services beide als root gestartet werden, da sonst der Zugriff
+auf die GPIO-Ports verweigert werden. Wird die Java Applikation nicht als root gestartet,
+kann diese auch nicht den pi-blaster als root ausführen.
+
+4.) Benutzung
+Das System wird durch Events der KAA-SDK's gesteuert. Diese sind ebenfalls im GIT zu
+finden.
+Das System unterstützt alle grundsätzlichen Funktionen, die mit RGB-LEDs umgesetzt werden
+können.
+Z.B.: 
+-setBrightness(LightID, brightness[0-255]
+-setColor(LightID, red[0-255], green[0-255], blue[0-255])
+
+Um die Struktur eines Hauses beizubehalten, werden Lichter immer nur Räumen unterge-
+ordnet. Wird ein Licht einem Raum hinzugefügt, der bis dato nicht existierte, wird der
+Raum automatisch erstellt.
+
+Wird die Applikation nicht als Service, sondern in einer Shell ausgeführt,
+so kann über -h die Grundlegenden Befehle zur Konfiguration eingesehen werden.
+So können neue LEDs oder Räume auch ohne die App hinzugefügt werden.
+Der Rettungsweg wird nicht innerhalb der App entwickelt, sodass dieser über diese
+Terminal-Befehle gesetzt werden muss. Er kann auch in der XML-Datei hinzugefügt werden,
+indem Raum-Objecte dem emergency_path hinzugefügt werden.
+

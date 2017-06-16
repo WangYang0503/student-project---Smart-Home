@@ -1,0 +1,246 @@
+[
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "LEDInfoRequestEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "LEDInfoObject",
+    "type": "record",
+    "classType": "object",
+    "fields": [
+      {
+        "name": "ID",
+        "type": "string"
+      },
+	  {
+		"name": "RoomID",
+		"type": "string"
+	  },
+      {
+        "name": "IsRGB",
+        "type": "boolean"
+      },
+      {
+        "name": "Red",
+        "type": "int"	  
+      },
+      {
+        "name": "Green",
+        "type": "int"	  
+      },	  
+      {
+        "name": "Blue",
+        "type": "int"
+      },
+      {
+        "name": "Brightness",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "LEDInfoResponseEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "LEDInfoList",
+		"type":  {
+			"type" : "array",
+			"items" : "smart_things.light.schema.LEDInfoObject"
+		}		
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "RoomInfoRequestEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "RoomInfoResponseEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "RoomInfoList",
+		"type":  {
+			"type" : "array",
+			"items" : "string"
+		}	
+      }
+    ]
+  },
+   {
+    "namespace": "smart_things.light.schema",
+    "name": "AddRoomEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "RoomID",
+		"type": "string"
+	  }
+    ]
+  },
+   {
+    "namespace": "smart_things.light.schema",
+    "name": "RemoveRoomEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "RoomID",
+		"type": "string"
+	  }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "AddLightEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "LightID",
+		"type": "string"
+	  },
+	  {
+		"name": "RoomID",
+		"type": "string"
+	  },
+	  {
+		"name": "Slot",
+		"type": "int"
+	  }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "AddRGBLightEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "LightID",
+		"type": "string"
+	  },
+	  {
+		"name": "RoomID",
+		"type": "string"
+	  },
+	  {
+		"name": "SlotRed",
+		"type": "int"
+	  },
+	  {
+		"name": "SlotGreen",
+		"type": "int"
+	  },
+	  {
+		"name": "SlotBlue",
+		"type": "int"
+	  }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "RemoveLightEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "LightID",
+		"type": "string"
+	  }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "SetBrightnessEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "LightID",
+		"type": "string"
+	  },
+	  {
+		"name": "Brightness",
+		"type": "int"
+	  }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "SetColorEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "LightID",
+		"type": "string"
+	  },
+	  {
+		"name": "Red",
+		"type": "int"
+	  },
+	  {
+		"name": "Green",
+		"type": "int"
+	  },
+	  {
+		"name": "Blue",
+		"type": "int"
+	  }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "SetRoomBrightnessEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "RoomID",
+		"type": "string"
+	  },
+	  {
+		"name": "Brightness",
+		"type": "int"
+	  }
+    ]
+  },
+  {
+    "namespace": "smart_things.light.schema",
+    "name": "SetRoomColorEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+	  {
+		"name": "RoomID",
+		"type": "string"
+	  },
+	  {
+		"name": "Red",
+		"type": "int"
+	  },
+	  {
+		"name": "Green",
+		"type": "int"
+	  },
+	  {
+		"name": "Blue",
+		"type": "int"
+	  }
+    ]
+  }
+]
