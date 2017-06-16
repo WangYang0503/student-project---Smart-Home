@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Backend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CoffeeMachine/CoffeeServer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CoffeeMachine/SmartCoffeeAPI" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ControlThing/SmartControl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ControlThing/SmartHomeApp_android" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Doc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DoorOpener" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LightControl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SmartCar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SmokeDeviceSimulator" charset="UTF-8" />
+  </component>
+</project>

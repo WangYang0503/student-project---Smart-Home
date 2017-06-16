@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ControlThing/SmartHomeApp_android/android_app.iml" filepath="$PROJECT_DIR$/ControlThing/SmartHomeApp_android/android_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ControlThing/SmartControl/android_app (1).iml" filepath="$PROJECT_DIR$/ControlThing/SmartControl/android_app (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backend/backend.iml" filepath="$PROJECT_DIR$/Backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartCar/car_control.iml" filepath="$PROJECT_DIR$/SmartCar/car_control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoffeeMachine/CoffeeServer/coffee_server.iml" filepath="$PROJECT_DIR$/CoffeeMachine/CoffeeServer/coffee_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Doc/documentation.iml" filepath="$PROJECT_DIR$/Doc/documentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DoorOpener/door_control.iml" filepath="$PROJECT_DIR$/DoorOpener/door_control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LightControl/light_control.iml" filepath="$PROJECT_DIR$/LightControl/light_control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoffeeMachine/SmartCoffeeAPI/smart_coffee_api.iml" filepath="$PROJECT_DIR$/CoffeeMachine/SmartCoffeeAPI/smart_coffee_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smart_things.iml" filepath="$PROJECT_DIR$/smart_things.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmokeDeviceSimulator/smokedevice_simulator.iml" filepath="$PROJECT_DIR$/SmokeDeviceSimulator/smokedevice_simulator.iml" />
+    </modules>
+  </component>
+</project>

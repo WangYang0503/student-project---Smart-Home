@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="backend" />
+        <module name="car_control" />
+        <module name="coffee_server" />
+        <module name="door_control" />
+        <module name="light_control" />
+        <module name="smart_coffee_api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="android_app" target="1.8" />
+      <module name="android_app (1)" target="1.8" />
+      <module name="backend" target="1.8" />
+      <module name="car_control" target="1.7" />
+      <module name="coffee_server" target="1.8" />
+      <module name="documentation" target="1.8" />
+      <module name="door_control" target="1.7" />
+      <module name="light_control" target="1.8" />
+      <module name="smart_coffee_api" target="1.8" />
+      <module name="smart_things" target="1.8" />
+      <module name="smokedevice_simulator" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
