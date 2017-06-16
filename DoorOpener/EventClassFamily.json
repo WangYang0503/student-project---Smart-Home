@@ -1,0 +1,112 @@
+[
+  {
+    "namespace": "smart_things.door.schema",
+    "type": "enum",
+    "classType": "object",
+    "name": "MoveStates",
+    "symbols": [
+      "NONE",
+      "OPENING",
+      "CLOSING"
+    ]
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "InfoObject",
+    "type": "record",
+    "classType": "object",
+    "fields": [
+      {
+        "name": "DoorOpened",
+        "type": "boolean"
+      },
+      {
+        "name": "DoorMoveState",
+        "type": "smart_things.door.schema.MoveStates"
+      },
+      {
+        "name": "GarageOpened",
+        "type": "boolean"
+      },
+      {
+        "name": "GarageMoveState",
+        "type": "smart_things.door.schema.MoveStates"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "InfoRequestEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "InfoResponseEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": [
+      {
+        "name": "InfoObject",
+        "type": "smart_things.door.schema.InfoObject"
+      }
+    ]
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "DoorClosedEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "DoorOpenedEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "GarageClosedEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "GarageOpenedEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "OpenDoorEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "CloseDoorEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "OpenGarageEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  },
+  {
+    "namespace": "smart_things.door.schema",
+    "name": "CloseGarageEvent",
+    "type": "record",
+    "classType": "event",
+    "fields": []
+  }
+]
